@@ -1,12 +1,142 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor AI | Clinical Intelligence</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#549EC0',
+                        ink: '#000000',
+                        paper: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .medical-grid {
+            background-size: 60px 60px;
+            background-image: linear-gradient(to right, #f0f0f0 1px, transparent 1px),
+                              linear-gradient(to bottom, #f0f0f0 1px, transparent 1px);
+        }
+        .text-balance { text-wrap: balance; }
+    </style>
+</head>
+<body class="bg-paper text-ink antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-700 px-10 py-8">
+        <div class="max-w-[1600px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <i data-lucide="stethoscope" class="text-primary w-7 h-7"></i>
+                <span class="text-2xl font-bold tracking-tighter uppercase">Doctor AI</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-12">
+                <a href="#" class="text-[11px] font-bold uppercase tracking-[0.25em] text-black/40 hover:text-primary transition-colors">Platform</a>
+                <a href="#" class="text-[11px] font-bold uppercase tracking-[0.25em] text-black/40 hover:text-primary transition-colors">Security</a>
+                <a href="#" class="text-[11px] font-bold uppercase tracking-[0.25em] text-black/40 hover:text-primary transition-colors">Research</a>
+                <button class="bg-black text-white px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-primary transition-all duration-500">Request Access</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center pt-20 px-10 overflow-hidden">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="text-[10vw] lg:text-[120px] font-serif italic leading-[0.85] mb-12 tracking-tighter text-black text-balance">
+                The platform for <br>
+                <span class="text-primary not-italic font-sans font-bold tracking-[-0.06em]">professional</span> care.
+            </h1>
+            <p class="max-w-3xl mx-auto text-2xl md:text-3xl text-black/40 mb-16 font-light leading-relaxed text-balance">
+                Doctor AI is a clinical intelligence platform designed to empower healthcare institutions with medical precision.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+                <button class="bg-black text-white px-12 py-6 rounded-full font-bold text-xs uppercase tracking-[0.3em] hover:bg-primary transition-all duration-500">Request Access</button>
+                <button class="text-black font-bold text-xs uppercase tracking-[0.3em] flex items-center gap-3 group">
+                    Watch the film <div class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center group-hover:bg-black group-hover:text-white transition-all"><i data-lucide="chevron-right" size="18"></i></div>
+                </button>
+            </div>
+        </div>
+        <div class="absolute inset-0 medical-grid opacity-5 -z-10"></div>
+    </section>
+
+    <!-- Trust -->
+    <section class="py-32 px-10 border-t border-black/[0.03]">
+        <div class="max-w-[1600px] mx-auto flex flex-col items-center">
+            <p class="text-[10px] font-bold text-black/20 uppercase tracking-[0.5em] mb-16">Trusted by the elite</p>
+            <div class="w-full flex flex-wrap justify-center items-center gap-20 md:gap-32 opacity-20 grayscale">
+                <span class="text-2xl font-serif italic font-bold tracking-tighter">MAYO CLINIC</span>
+                <span class="text-2xl font-serif italic font-bold tracking-tighter">CLEVELAND CLINIC</span>
+                <span class="text-2xl font-serif italic font-bold tracking-tighter">JOHNS HOPKINS</span>
+                <span class="text-2xl font-serif italic font-bold tracking-tighter">STANFORD MEDICINE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Split Section -->
+    <section class="py-40 px-10 border-t border-black/[0.03]">
+        <div class="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div>
+                <span class="text-primary font-bold uppercase tracking-[0.4em] text-[10px] mb-8 block">Intelligence</span>
+                <h2 class="text-6xl md:text-8xl font-serif italic mb-12 leading-[0.9] tracking-tighter text-black">The cognitive layer for care.</h2>
+                <p class="text-2xl text-black/40 font-light leading-relaxed mb-16 max-w-xl">Doctor AI synthesizes vast clinical datasets to provide clinicians with the most relevant insights at the point of care.</p>
+                <div class="grid grid-cols-2 gap-12">
+                    <div>
+                        <p class="text-4xl font-serif italic text-black mb-2">99.9%</p>
+                        <p class="text-[10px] font-bold text-black/30 uppercase tracking-widest">Clinical Accuracy</p>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-serif italic text-black mb-2">1.4M+</p>
+                        <p class="text-[10px] font-bold text-black/30 uppercase tracking-widest">Data Points</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative aspect-[4/5] rounded-[60px] overflow-hidden bg-slate-100">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover grayscale">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-40 pb-20 px-10 border-t border-black/[0.03]">
+        <div class="max-w-[1600px] mx-auto text-center">
+            <div class="flex items-center justify-center gap-3 mb-10">
+                <i data-lucide="stethoscope" class="text-primary w-8 h-8"></i>
+                <span class="text-3xl font-bold tracking-tighter text-black uppercase">Doctor AI</span>
+            </div>
+            <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-black/20">© 2024 DOCTOR AI INC. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-white/80', 'backdrop-blur-xl', 'py-5');
+                nav.classList.remove('py-8');
+            } else {
+                nav.classList.remove('bg-white/80', 'backdrop-blur-xl', 'py-5');
+                nav.classList.add('py-8');
+            }
+        });
+    </script>
+</body>
 </html>
